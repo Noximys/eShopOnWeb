@@ -35,7 +35,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        sh 'dotnet publish eShopOnWeb.sln -o /var/aspnet/'
+        sh 'dotnet publish eShopOnWeb.sln -o /home/nox/jenkins/aspnet'
         dir(path: '/home/nox/jenkins/aspnet') {
           archiveArtifacts(artifacts: '*', onlyIfSuccessful: true)
         }
